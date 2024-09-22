@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakancslista</title>
+</head>
+<body>
+    <div>
+        <p>Bakancslista</p>
+        <input id="bakancslista">
+    </div>
+    <button onclick="hozzaad()">Listához hozzáad</button>
+    <button onclick="reset()">Reset lista</button>
+    <h4>Meg szeretnek kapni <span id="darab"></span> terméket:</h4>
+    <ul id="bakancs_lista">
+
+    </ul>
+
+</body>
+<script>
+    let db = 0
+    let termeket = ['csoki', 'piros labda', 'plüssmaci', 'narancs', 'színező']
+
+    function reset() {
+        console.log( 'termekek valtozo:', termek)
+        console.log( 'termekek valtozo:', termek[3])
+        let bakancsLista = document.getElementById("bakancs_lista")
+
+        for(termek of termeket) {
+            console.log(termek)
+            bakancsLista.innerHTML += `<li>${termek}</li>`
+        }
+    }
+    function hozzaad() {
+        let bakancslistaNeve = document.getElementById("bakancslista").value
+        let bakancsLista = document.getElementById("bakancs_lista")
+        bakancsLista.innerHTML += `<li>${bakancslistaNeve}</li>`
+        db = db + 1 
+
+        document.getElementById("darab").innerHTML = db
+
+        console.log(bakancslistaNeve)
+        console.log("darab", db)
+    }
+
+</script>
+</html>
